@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Strategi Digital - CV Tunas Abadi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Application Structure Plan: The infographic follows a narrative structure to guide the user through a strategic analysis. It begins with a hook (The Challenge), presents the market context (The Opportunity), dives into the core analysis (SWOT), presents the solution (Strategic Recommendations), and provides a clear action plan (Implementation Roadmap). This logical flow was chosen to make a complex business case study digestible and compelling, mirroring how a consultant would present findings. -->
+    <!-- Visualization & Content Choices: 
+        - Facebook User Stats: Data Point (User numbers & demographics) -> Goal (Inform/Compare) -> Chosen Viz (Big Numbers & Donut Chart) -> Justification (Big numbers for impact, Donut for clear proportional breakdown of audience). Library: Chart.js.
+        - SWOT Analysis: Data Point (Internal/External factors) -> Goal (Organize) -> Chosen Viz (Styled 2x2 Card Grid) -> Justification (Visually separates the four quadrants for clarity and focused reading). Method: HTML/CSS.
+        - Strategic Matrix: Data Point (S-O, W-O, S-T, W-T strategies) -> Goal (Compare) -> Chosen Viz (Bar Chart) -> Justification (Compares the conceptual impact of each strategic direction, aiding prioritization). Library: Chart.js.
+        - Implementation Plan: Data Point (Phased recommendations) -> Goal (Change/Organize) -> Chosen Viz (HTML/CSS Timeline) -> Justification (Clearly visualizes a process over time, making it easy to follow). Method: HTML/CSS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 45vh;
+        }
+        .section-title {
+            color: #00449E;
+        }
+        .material-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+        }
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-700 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#00449E]">Analisis Strategis CV Tunas Abadi</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#market" class="text-gray-600 hover:text-[#005FB8] font-medium">Peluang Pasar</a>
+                <a href="#swot" class="text-gray-600 hover:text-[#005FB8] font-medium">Analisis SWOT</a>
+                <a href="#strategy" class="text-gray-600 hover:text-[#005FB8] font-medium">Rekomendasi</a>
+                <a href="#roadmap" class="text-gray-600 hover:text-[#005FB8] font-medium">Peta Jalan</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Intro Section -->
+        <section id="intro" class="text-center py-12">
+            <h2 class="text-4xl md:text-5xl font-extrabold section-title">Menghadapi Era Digital</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">CV Tunas Abadi, dengan warisan 30 tahun, berada di persimpangan jalan. Kuat di pasar tradisional B2B, namun menghadapi tantangan besar dalam menaklukkan lanskap B2C digital yang kompetitif.</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="material-card p-6">
+                    <p class="text-6xl font-bold text-[#005FB8]">30+</p>
+                    <p class="mt-2 text-xl font-semibold">Tahun Pengalaman</p>
+                    <p class="text-gray-500">Membangun fondasi kepercayaan yang kuat dengan klien korporat dan pemerintah.</p>
+                </div>
+                <div class="material-card p-6">
+                    <p class="text-6xl font-bold text-[#0075C4]">B2C</p>
+                    <p class="mt-2 text-xl font-semibold">Tantangan Kompetitif</p>
+                    <p class="text-gray-500">Merek sendiri (Primatech, MyScreen) kurang dikenal dan sulit bersaing dengan pemain besar di pasar ritel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Opportunity Section -->
+        <section id="market" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold section-title">Peluang di Depan Mata: Facebook</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Platform ini bukan hanya media sosial, tetapi sebuah ekosistem pasar yang masif dan sangat relevan bagi CV Tunas Abadi di Indonesia.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="material-card p-6">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">Demografi Pengguna Facebook di Indonesia</h3>
+                    <p class="text-center text-gray-600 mb-4">Kelompok usia 25-34 tahun, demografi inti untuk produk kantor dan elektronik, merupakan segmen terbesar. Ini adalah target pasar yang matang dan siap dijangkau.</p>
+                    <div class="chart-container h-[300px] md:h-[350px]">
+                        <canvas id="demographicsChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="material-card p-6 text-center">
+                        <p class="text-5xl font-bold text-[#005FB8]">119 Juta</p>
+                        <p class="mt-2 text-xl font-semibold">Pengguna Aktif di Indonesia</p>
+                        <p class="text-gray-500">Menjadikan Indonesia pasar Facebook terbesar ke-3 di dunia, sebuah audiens yang tidak bisa diabaikan.</p>
+                    </div>
+                    <div class="material-card p-6 text-center">
+                        <p class="text-5xl font-bold text-[#0075C4]">~70%</p>
+                        <p class="mt-2 text-xl font-semibold">Pangsa Pasar Media Sosial</p>
+                        <p class="text-gray-500">Dominasi Facebook memberikan jangkauan tak tertandingi dibandingkan platform lain di Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SWOT Analysis Section -->
+        <section id="swot" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold section-title">Analisis SWOT</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Membedah faktor internal dan eksternal yang membentuk realitas bisnis CV Tunas Abadi saat ini.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Strengths -->
+                <div class="material-card p-6 border-t-4 border-[#00A3D9]">
+                    <h3 class="text-2xl font-bold text-[#00A3D9] mb-3">Kekuatan (Strengths)</h3>
+                    <ul class="space-y-2 list-inside list-disc">
+                        <li>Pengalaman 30+ tahun dengan basis klien korporat & pemerintah yang loyal.</li>
+                        <li>Memiliki portofolio merek sendiri (Primatech, MyScreen, dll).</li>
+                        <li>Reputasi yang solid di pasar B2B.</li>
+                    </ul>
+                </div>
+                <!-- Weaknesses -->
+                <div class="material-card p-6 border-t-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-3">Kelemahan (Weaknesses)</h3>
+                    <ul class="space-y-2 list-inside list-disc">
+                        <li>Merek kurang dikenal di pasar B2C yang ramai.</li>
+                        <li>Strategi pemasaran digital belum optimal, terutama dalam membangun komunitas.</li>
+                        <li>Penjualan tidak merata antar kategori produk.</li>
+                    </ul>
+                </div>
+                <!-- Opportunities -->
+                <div class="material-card p-6 border-t-4 border-[#0075C4]">
+                    <h3 class="text-2xl font-bold text-[#0075C4] mb-3">Peluang (Opportunities)</h3>
+                    <ul class="space-y-2 list-inside list-disc">
+                        <li>Jangkauan masif & demografi relevan di Facebook.</li>
+                        <li>Pergeseran perilaku konsumen ke arah digital dan personalisasi.</li>
+                        <li>Potensi membangun loyalitas merek melalui pemasaran komunitas dengan biaya rendah.</li>
+                        <li>Penggunaan analitik (*smart environments*) untuk keputusan berbasis data.</li>
+                    </ul>
+                </div>
+                <!-- Threats -->
+                <div class="material-card p-6 border-t-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-500 mb-3">Ancaman (Threats)</h3>
+                    <ul class="space-y-2 list-inside list-disc">
+                        <li>Persaingan ketat dari merek besar dengan anggaran pemasaran masif.</li>
+                        <li>Penurunan jangkauan organik Facebook yang memaksa investasi pada iklan.</li>
+                        <li>Perubahan algoritma yang konstan dan potensi penurunan audiens muda.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Recommendations Section -->
+        <section id="strategy" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold section-title">Rekomendasi Strategis</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Strategi yang dirumuskan dari Matriks SWOT untuk mengubah tantangan menjadi keunggulan kompetitif.</p>
+            </div>
+            <div class="material-card p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Matriks Strategi: Fokus & Prioritas</h3>
+                        <p class="text-gray-600 mb-6">Analisis menunjukkan empat jalur strategis utama. Fokus harus diberikan pada strategi S-O (ofensif) dan W-O (perbaikan) untuk secara proaktif merebut pasar, sambil mengelola risiko melalui strategi S-T dan W-T.</p>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-bold text-[#005FB8]">Strategi S-O (Agresif)</h4>
+                                <p>Gunakan pelanggan setia untuk membentuk komunitas awal di Facebook dan manfaatkan fitur-fitur platform untuk memperkuat hubungan.</p>
+                            </div>
+                            <div class="p-4 bg-green-50 rounded-lg">
+                                <h4 class="font-bold text-green-700">Strategi W-O (Perbaikan)</h4>
+                                <p>Gunakan analitik Facebook untuk memahami pasar B2C dan menargetkan iklan secara efektif, meningkatkan pengenalan merek.</p>
+                            </div>
+                            <div class="p-4 bg-orange-50 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Strategi S-T (Diversifikasi)</h4>
+                                <p>Tonjolkan pengalaman 30 tahun untuk membangun kepercayaan dan fokus pada demografi dewasa di Facebook yang paling relevan.</p>
+                            </div>
+                            <div class="p-4 bg-red-50 rounded-lg">
+                                <h4 class="font-bold text-red-700">Strategi W-T (Defensif)</h4>
+                                <p>Kurangi ketergantungan pada Facebook dengan menjajaki platform lain dan optimalkan konten agar tetap relevan dengan algoritma.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                         <h3 class="text-2xl font-bold text-center text-gray-800 mt-8 lg:mt-0 mb-4">Perbandingan Dampak Potensial Strategi</h3>
+                         <p class="text-center text-gray-600 mb-4">Grafik ini memvisualisasikan dampak potensial dari setiap kuadran strategi, menyoroti bahwa strategi pertumbuhan proaktif (S-O dan W-O) menjanjikan hasil paling signifikan.</p>
+                        <div class="chart-container h-[400px]">
+                            <canvas id="strategyImpactChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold section-title">Peta Jalan Implementasi</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Langkah-langkah praktis dan bertahap untuk menerapkan strategi pemasaran komunitas dan *smart environments*.</p>
+            </div>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 w-1 h-full bg-[#00A3D9]/30 rounded"></div>
+                <!-- Phase 1 -->
+                <div class="mb-12 flex md:items-center w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 bg-[#008AD2] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+                    <div class="material-card p-6 w-full md:w-5/12 ml-6 md:ml-8">
+                        <h3 class="font-bold text-xl text-[#005FB8]">Fase 1: Fondasi (0-3 Bulan)</h3>
+                        <p class="mt-2 text-gray-600">Membangun dasar komunitas. Undang pelanggan setia, siapkan Grup Facebook, dan posting konten awal yang bernilai untuk memancing diskusi.</p>
+                    </div>
+                </div>
+                <!-- Phase 2 -->
+                <div class="mb-12 flex md:items-center w-full">
+                    <div class="hidden md:block w-5/12 text-right pr-8">
+                         <div class="material-card p-6">
+                            <h3 class="font-bold text-xl text-[#005FB8]">Fase 2: Pertumbuhan (3-6 Bulan)</h3>
+                            <p class="mt-2 text-gray-600">Mendorong interaksi. Jalankan kontes kecil, dorong konten buatan pengguna (UGC), dan mulai gunakan iklan bertarget sederhana.</p>
+                        </div>
+                    </div>
+                    <div class="z-10 bg-[#008AD2] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+                    <div class="w-full md:w-5/12 md:pl-8">
+                         <div class="material-card p-6 md:hidden">
+                            <h3 class="font-bold text-xl text-[#005FB8]">Fase 2: Pertumbuhan (3-6 Bulan)</h3>
+                            <p class="mt-2 text-gray-600">Mendorong interaksi. Jalankan kontes kecil, dorong konten buatan pengguna (UGC), dan mulai gunakan iklan bertarget sederhana.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Phase 3 -->
+                <div class="mb-12 flex md:items-center w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-10 bg-[#008AD2] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+                    <div class="material-card p-6 w-full md:w-5/12 ml-6 md:ml-8">
+                        <h3 class="font-bold text-xl text-[#005FB8]">Fase 3: Optimalisasi (6+ Bulan)</h3>
+                        <p class="mt-2 text-gray-600">Memperdalam analisis. Gunakan analitik canggih, lakukan A/B testing pada iklan, dan ukur ROI secara konsisten untuk menyempurnakan strategi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-[#00449E] text-white text-center py-4 mt-8">
+        <p>Infografis ini dibuat berdasarkan penelitian "Scriptpreneur" oleh Naufal Sulthan Dila, 2025.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        // Demographics Chart
+        const demoCtx = document.getElementById('demographicsChart').getContext('2d');
+        new Chart(demoCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['18-24', '25-34', '35-44', '45-54', '55+'],
+                datasets: [{
+                    label: 'Distribusi Usia Pengguna',
+                    data: [24.5, 31.5, 18.4, 12.1, 13.5],
+                    backgroundColor: ['#00A3D9', '#0075C4', '#005FB8', '#00449E', '#008AD2'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        // Strategy Impact Chart
+        const impactCtx = document.getElementById('strategyImpactChart').getContext('2d');
+        new Chart(impactCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('S-O: Agresif & Proaktif'),
+                    wrapLabel('W-O: Perbaikan & Penargetan'),
+                    wrapLabel('S-T: Diferensiasi & Kepercayaan'),
+                    wrapLabel('W-T: Mitigasi & Pertahanan')
+                ],
+                datasets: [{
+                    label: 'Potensi Dampak Terhadap Pertumbuhan',
+                    data: [9, 8, 6, 5],
+                    backgroundColor: ['#005FB8', '#0075C4', '#008AD2', '#00A3D9'],
+                    borderColor: '#00449E',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Skor Dampak Relatif'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+    </script>
+</body>
+</html>
