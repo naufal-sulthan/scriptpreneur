@@ -1,9 +1,9 @@
 # scriptpreneur
 Sebuah halaman web infografis statis yang menyajikan analisis strategi digital dan rekomendasi untuk perusahaan B2B yang bertransisi ke pasar B2C, dibuat dengan HTML, Tailwind CSS, dan Chart.js.
 
-## Infografis Analisis Strategi Digital: Studi Kasus CV Tunas Abadi
+## Infografis Analisis Strategi Digital: Studi Kasus Perusahaan pengadaan barang
 
-Proyek ini adalah sebuah halaman web infografis yang menyajikan studi kasus analisis strategis untuk **CV Tunas Abadi**, sebuah perusahaan fiktif dengan pengalaman 30 tahun di pasar B2B yang menghadapi tantangan dalam memasuki lanskap digital B2C. Infografis ini dirancang untuk memvisualisasikan data dan strategi secara naratif dan mudah dipahami, seolah-olah presentasi dari seorang konsultan.
+Proyek ini adalah sebuah halaman web infografis yang menyajikan studi kasus analisis strategis untuk **Perusahaan pengadaan barang**, sebuah perusahaan fiktif dengan pengalaman 30 tahun di pasar B2B yang menghadapi tantangan dalam memasuki lanskap digital B2C. Infografis ini dirancang untuk memvisualisasikan data dan strategi secara naratif dan mudah dipahami, seolah-olah presentasi dari seorang konsultan.
 
 Analisis ini berfokus pada pemanfaatan Facebook sebagai platform utama untuk menjangkau pasar B2C di Indonesia, berdasarkan demografi pengguna dan dominasi pasarnya. Proyek ini dikembangkan berdasarkan penelitian "Scriptpreneur" oleh Naufal Sulthan Dila, 2025.
 
